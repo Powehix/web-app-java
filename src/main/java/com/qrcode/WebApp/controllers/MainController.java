@@ -13,4 +13,9 @@ public class MainController {
         return "home";
     }
 
+    /*@GetMapping("/rooms")
+    public String rooms(Model model) {
+        return "rooms";
+    }*/
+
 }

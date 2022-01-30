@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* position: relative; */
+    background: #FFFFFF;
+    color: #666666;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+    /* height: 100%; */
+    margin: 0 auto;
+}
+
+.navigation {
+    /* position: absolute; */
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding-left: 20%;
+    /* margin: 0 auto */
+}
+
+li {
+    position: relative;
+    font-size: 16px;
+    padding-right: 5%;
+    display: inline;
+}
+
+li a {
+    text-decoration: none;
+    color: #666666;
+}
+
+li a:hover {
+    color: #404CCF;
+}
+
+.info {
+    /* position: absolute; */
+    background: #F0F0F0;
+    width: 100%;
+    text-align: center;
+    border-top: 2px solid #c2c2c2;
+}
+
+.infoContent {
+    /* background: #F0F0F0; */
+}
+
+.infoContent h2 {
+    /* padding-top: 3%; */
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.infoDescription p {
+    font-size: 20px;
+}
+
+.infoButton {
+    width: 40%;
+    padding-top: 2vh;
+    margin: 0 auto;
+}
+
+.mobileApp {
+    width: 243.49px;
+    height: 65px;
+    left: 838px;
+    /* top: 263px; */
+    background-color: #404CCF;
+    color: #FFFFFF;
+    /* padding: .5em 2em; */
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+.mobileApp:hover {
+    background-color: #323ca5;
+}
+
+.infoMenu {
+    position: relative;
+    font-size: 24px;
+    /* width: 40%; */
+    padding-top: 90px;
+}
+
+.infoMenuElements {
+    /* width: 40%; */
+    justify-content: center;
+}
+
+.infoMenu button {
+    position: relative;
+    /* text-align: center; */
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: normal;
+    color: #666666;
+    /* padding-left: 10%; */
+    padding-left: 5%;
+    padding-right: 5%;
+    /* top: 57%; */
+    /* margin: 0 auto; */
+}
+
+.infoMenu button:hover {
+    color: #404CCF;
+}
+
+hr {
+    position: relative;
+    height: .15rem;
+    /* width: 250px; */
+    /* width: 25%; */
+    width: 200px;
+    /* margin-left: 43%; */
+    /* padding-left: 20%; */
+    /* float: left; */
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-left: 51.5%;
+    /* margin: 0 auto; */
+    background: #404CCF;
+    border: none;
+    transition: .3s ease-in-out;
+}
+
+.infoMenu .active {
+    color: #404CCF;
+}
+
+.generate {
+    display: block;
+    position: relative;
+}
+
+.generateForm {
+    position: absolute;
+    left: 20%;
+    padding-top: 100px;
+}
+
+.generateForm input[name="date"], .generateForm input[name="description"], .generateForm input[name="price"], .generateForm input[name="location"] {
+    width: 250px;
+    padding: 5px;
+    display: flex;
+    border: none;
+    border-bottom: 2px solid #f5f5f5;
+    transition: 0.2s;
+    margin-bottom: 20px;
+}
+
+.generateForm input[name="date"]:focus, .generateForm input[name="description"]:focus, .generateForm input[name="price"]:focus, .generateForm input[name="location"]:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #404CCF;
+}
+
+.generateFormButton {
+    color: #404CCF;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    font-weight: normal;
+    transition: 0.2s;
+    justify-content: left;
+    padding: 0;
+    padding-top: 10%;
+    padding-bottom: 20%;
+}
+
+.generateFormButton:hover {
+    color: #323ca5;
+}
+
+.generateAbout {
+    position: absolute;
+    left: 60%;
+    padding-top: 80px;
+    line-height: 25px;
+}
+
+.generateAbout h3 {
+    font-weight: normal;
+}
+
+.generateAbout p {
+    width: 80%;
+}
+
+.inventory {
+    display: none;
+    position: relative;
+    /* если убрать top, при переключении меню сдвигаются блоки */
+    top: 446px;
+}

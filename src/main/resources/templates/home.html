@@ -1,10 +1,81 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <title th:text="${title}"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
 </head>
 <body>
-<p th:text="'Hello, ' + ${title} + '!'" />
+<header th:insert="blocks/header :: header"></header>
+<main>
+    <article>
+        <section>
+            <div class="info">
+                <div class="infoContent">
+                    <h2>Generate & Print</h2>
+                    <div class="infoDescription">
+                        <p>Create and print a QR-code to make an inventory of available devices, view the inventory and manage their status.</p>
+                    </div>
+                    <div class="infoButton">
+                        <button class="mobileApp"><i class="fa fa-download"></i>Mobile App</button>
+                    </div>
+                    <div class="infoMenu" id="infoMenu">
+                        <div class="infoMenuElements">
+                            <button class="menuButton inventoryButton" onclick="toggleInventory()">Inventory</button>
+                            <button class="menuButton generateButton active" onclick="toggleGenerate()">Generate QR code</button>
+                            <hr id="hr"/>
+                        </div>
+                    </div>
+                    <script src="menu.js"></script>
+                </div>
+            </div>
+        </section>
+    </article>
+    <div class="generate" id="generate">
+        <form action="" class="generateForm">
+            <div class="generateDate">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" value="2022-01-16">
+            </div>
+            <div class="generateDescription">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description"></textarea>
+            </div>
+            <div class="generatePrice">
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price">
+            </div>
+            <div class="generateLocation">
+                <!-- здесь сделать выпадающий список из базы данных -->
+                <label for="location">Location</label>
+                <input type="text" name="location" id="location">
+            </div>
+            <button type="sumbit" class="generateFormButton">Generate</button>
+        </form>
+        <div class="generateAbout">
+            <article>
+                <section>
+                    <h3>About inventory</h3>
+                    <p>A unique identifier is assigned to the created QR code, which
+                        is later used to check the presence of the object. While scanning
+                        the QR code the fields presented for filling, which cannot be changed,
+                        but can be deleted from the database, are determined.
+                    </p>
+                </section>
+            </article>
+        </div>
+    </div>
+    <!-- сделать вторую страницу для inventory  -->
+    <div class="inventory" id="inventory">
+        123
+        123
+    </div>
+</main>
+<footer>
+    <!-- футер -->
+</footer>
 </body>
 </html>

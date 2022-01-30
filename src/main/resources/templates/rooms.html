@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Rooms</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<main>
+    <div class="123">
+        <h2>Rooms</h2>
+        <div th:each="el : ${rooms}">
+            <h3 th:text="${el.number}"></h3>
+            <p th:text="${el.numberOfObjects}"></p>
+        </div>
+    </div>
+</main>
+<footer>
+    <!-- футер -->
+</footer>
+</body>
+</html>
