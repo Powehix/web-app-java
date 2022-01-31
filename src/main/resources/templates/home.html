@@ -26,7 +26,7 @@
                         <div class="infoMenuElements">
                             <button class="menuButton inventoryButton" onclick="toggleInventory()">Inventory</button>
                             <button class="menuButton generateButton active" onclick="toggleGenerate()">Generate QR code</button>
-                            <hr id="hr"/>
+                            <hr id="hrInfo"/>
                         </div>
                     </div>
                     <script src="menu.js"></script>
@@ -35,14 +35,14 @@
         </section>
     </article>
     <div class="generate" id="generate">
-        <form action="" class="generateForm">
+        <form action="/home" class="generateForm">
             <div class="generateDate">
                 <label for="date">Date</label>
                 <input type="date" name="date" id="date" value="2022-01-16">
             </div>
             <div class="generateDescription">
                 <label for="description">Description</label>
-                <input type="text" name="description" id="description"></textarea>
+                <input type="text" name="description" id="description">
             </div>
             <div class="generatePrice">
                 <label for="price">Price</label>
@@ -68,14 +68,26 @@
             </article>
         </div>
     </div>
-    <!-- сделать вторую страницу для inventory  -->
     <div class="inventory" id="inventory">
-        123
-        123
+        <table class="inventoryTable">
+            <tr class="inventoryTableHeader">
+                <th>ID</th>
+                <th>Result</th>
+                <th>Date</th>
+            </tr>
+            <tr th:each="el : ${inventories}">
+                <td th:text="${el.ID}"></td>
+                <td th:text="${el.result}"></td>
+                <td th:text="${el.date}"></td>
+            </tr>
+        </table>
+        <form action="/home" method="post">
+            <input type="text" name="result" placeholder="Result">
+            <input type="date" name="date" placeholder="Date">
+            <button type="submit">Add inventory</button>
+        </form>
     </div>
 </main>
-<footer>
-    <!-- футер -->
-</footer>
+<footer th:insert="blocks/footer :: footer"></footer>
 </body>
 </html>

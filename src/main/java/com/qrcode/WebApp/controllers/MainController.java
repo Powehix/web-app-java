@@ -1,21 +1,34 @@
 package com.qrcode.WebApp.controllers;
 
+import com.qrcode.WebApp.models.Inventory;
+import com.qrcode.WebApp.repo.InventoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.sql.Date;
 
 @Controller
 public class MainController {
 
-    @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("title", "Home page");
+    @Autowired
+    private InventoryRepository inventoryRepository;
+
+    @GetMapping("/home")
+    public String inventories(Model model) {
+        Iterable<Inventory> inventories = inventoryRepository.findAll();
+        model.addAttribute("inventories", inventories);
         return "home";
     }
 
-    /*@GetMapping("/rooms")
-    public String rooms(Model model) {
-        return "rooms";
-    }*/
+    @PostMapping("/home")
+    public String inventoryAdd(@RequestParam String result, @RequestParam Date date, Model model) {
+        Inventory inventory = new Inventory(result, date);
+        inventoryRepository.save(inventory);
+        return "redirect:/home";
+    }
 
 }

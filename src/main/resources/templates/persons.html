@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Rooms</title>
+    <title>Persons</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,10 +12,12 @@
 <header th:insert="blocks/header :: header"></header>
 <main>
     <div class="123">
-        <h2>Rooms</h2>
-        <div th:each="el : ${rooms}">
-            <h3 th:text="${el.number}"></h3>
-            <p th:text="${el.numberOfObjects}"></p>
+        <h2>Persons</h2>
+        <div th:each="el : ${persons}">
+            <p th:text="${el.name}"></p>
+            <p th:text="${el.surname}"></p>
+            <p th:text="${el.position}"></p>
+            <p th:text="${el.birthday}"></p>
         </div>
     </div>
 </main>

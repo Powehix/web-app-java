@@ -1,6 +1,6 @@
 function toggleInventory() {
     var divInventory = document.getElementById("inventory");
-    var hr = document.getElementById ("hr")
+    var hr = document.getElementById ("hrInfo")
     var width = window.innerWidth;
 
     if (divInventory.style.display === "none") {
@@ -30,7 +30,7 @@ function toggleInventory() {
 
 function toggleGenerate() {
     var divGenerate = document.getElementById("generate");
-    var hr = document.getElementById ("hr")
+    var hr = document.getElementById ("hrInfo")
     var width = window.innerWidth;
 
     if (divGenerate.style.display === "none") {
