@@ -3,9 +3,12 @@
 <head>
     <meta charset="utf-8"/>
     <title th:text="${title}"></title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reveal/reveal.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="reveal/jquery.reveal.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -36,23 +39,15 @@
     </article>
     <div class="generate" id="generate">
         <form action="/home" class="generateForm">
-            <div class="generateDate">
-                <label for="date">Date</label>
-                <input type="date" name="date" id="date" value="2022-01-16">
-            </div>
-            <div class="generateDescription">
-                <label for="description">Description</label>
-                <input type="text" name="description" id="description">
-            </div>
-            <div class="generatePrice">
-                <label for="price">Price</label>
-                <input type="number" name="price" id="price">
-            </div>
-            <div class="generateLocation">
-                <!-- здесь сделать выпадающий список из базы данных -->
-                <label for="location">Location</label>
-                <input type="text" name="location" id="location">
-            </div>
+            <label for="generateDate">Date</label>
+            <input type="date" name="date" id="generateDate" value="2022-01-16">
+            <label for="generateDescription">Description</label>
+            <input type="text" name="description" id="generateDescription">
+            <label for="generatePrice">Price</label>
+            <input type="number" name="price" id="generatePrice">
+            <!-- здесь сделать выпадающий список из базы данных -->
+            <label for="generateLocation">Location</label>
+            <input type="text" name="location" id="generateLocation">
             <button type="sumbit" class="generateFormButton">Generate</button>
         </form>
         <div class="generateAbout">
@@ -81,13 +76,20 @@
                 <td th:text="${el.date}"></td>
             </tr>
         </table>
-        <form action="/home" method="post">
-            <input type="text" name="result" placeholder="Result">
-            <input type="date" name="date" placeholder="Date">
-            <button type="submit">Add inventory</button>
-        </form>
+        <a href="#" class="big-link" data-reveal-id="myModal" data-animation="none">Add</a>
+        <div class="reveal-modal" id="myModal">
+            <h2>Add Inventory</h2>
+            <form action="/home" method="post" class="inventoryForm">
+                <label for="inventoryResult">Result</label>
+                <input type="text" name="result" id="inventoryResult">
+                <label for="inventoryDate">Date</label>
+                <input type="date" name="date" id="inventoryDate">
+                <button type="submit" class="inventoryFormButton">Add inventory</button>
+            </form>
+            <a class="close-reveal-modal">&#215;</a>
+        </div>
     </div>
 </main>
-<footer th:insert="blocks/footer :: footer"></footer>
+<footer id="foot" th:insert="blocks/footer :: footer"></footer>
 </body>
 </html>
