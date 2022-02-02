@@ -11,17 +11,25 @@ public class Inventory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long ID;
+    private Long id_inventory;
 
     private String result;
     private Date date;
 
-    public Long getID() {
-        return ID;
+    public Inventory() {
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public Inventory(String result, Date date) {
+        this.result = result;
+        this.date = date;
+    }
+
+    public Long getId_inventory() {
+        return id_inventory;
+    }
+
+    public void setId_inventory(Long id_inventory) {
+        this.id_inventory = id_inventory;
     }
 
     public String getResult() {
@@ -37,14 +45,6 @@ public class Inventory {
     }
 
     public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Inventory() {
-    }
-
-    public Inventory(String result, Date date) {
-        this.result = result;
         this.date = date;
     }
 }

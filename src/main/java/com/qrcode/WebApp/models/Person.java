@@ -1,27 +1,38 @@
 package com.qrcode.WebApp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.sql.Date;
+import javax.persistence.*;
 
 @Entity
 public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long ID;
+    private Long id_person;
 
-    private String name, surname, position;
-    private Date birthday;
+    private String name, surname;
 
-    public Long getID() {
-        return ID;
+    @Column(unique = true)
+    private String personal_code;
+
+    private String email, phone;
+
+    public Person() {
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public Person(String name, String surname, String personal_code, String email, String phone) {
+        this.name = name;
+        this.surname = surname;
+        this.personal_code = personal_code;
+        this.email = email;
+        this.phone = phone;
+    }
+
+    public Long getId_person() {
+        return id_person;
+    }
+
+    public void setId_person(Long id_person) {
+        this.id_person = id_person;
     }
 
     public String getName() {
@@ -40,19 +51,27 @@ public class Person {
         this.surname = surname;
     }
 
-    public String getPosition() {
-        return position;
+    public String getPersonal_code() {
+        return personal_code;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setPersonal_code(String personal_code) {
+        this.personal_code = personal_code;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public String getEmail() {
+        return email;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

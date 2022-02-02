@@ -3,22 +3,56 @@
 <head>
     <meta charset="utf-8"/>
     <title>Persons</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reveal/reveal.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+    <script type="text/javascript" src="reveal/jquery.reveal.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
 <main>
-    <div class="123">
-        <h2>Persons</h2>
-        <div th:each="el : ${persons}">
-            <p th:text="${el.name}"></p>
-            <p th:text="${el.surname}"></p>
-            <p th:text="${el.position}"></p>
-            <p th:text="${el.birthday}"></p>
+    <div class="dataContent">
+        <div class="dataLargeContainer">
+            <a href="#" class="big-link dataLink" data-reveal-id="myModal" data-animation="fade"><i class="fa fa-plus"></i></a>
         </div>
+        <div class="reveal-modal" id="myModal">
+            <h2>Add Person</h2>
+            <form action="/persons" method="post" class="dataForm">
+                <label for="personName">Name</label>
+                <input type="text" name="personName" id="personName">
+                <label for="personSurname">Surname</label>
+                <input type="text" name="personSurname" id="personSurname">
+                <label for="personPersonalCode">Personal code</label>
+                <input type="text" name="personPersonalCode" id="personPersonalCode">
+                <label for="personEmail">E-mail</label>
+                <input type="email" name="personEmail" id="personEmail">
+                <label for="personPhone">Phone</label>
+                <input type="tel" name="personPhone" id="personPhone">
+                <button type="submit" class="dataFormButton">Add</button>
+            </form>
+            <a class="close-reveal-modal">&#215;</a>
+        </div>
+        <table class="dataTable dataLargeTable">
+            <tr class="dataTableHeader">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Personal code</th>
+                <th>E-mail</th>
+                <th>Phone</th>
+            </tr>
+            <tr th:each="el : ${persons}">
+                <td th:text="${el.id_person}"></td>
+                <td th:text="${el.name}"></td>
+                <td th:text="${el.surname}"></td>
+                <td th:text="${el.personal_code}"></td>
+                <td th:text="${el.email}"></td>
+                <td th:text="${el.phone}"></td>
+            </tr>
+        </table>
     </div>
 </main>
 <footer th:insert="blocks/footer :: footer"></footer>

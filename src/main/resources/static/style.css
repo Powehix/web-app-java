@@ -5,30 +5,20 @@
 }
 
 body {
-    /* position: relative; */
     background: #FFFFFF;
     color: #666666;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    width: 100%;
-    /* height: 100%; */
     margin: 0 auto;
-}
-
-.navigation {
-    /* position: absolute; */
-    width: 100%;
 }
 
 ul {
     list-style: none;
-    padding-left: 20%;
-    /* margin: 0 auto */
+    margin-left: 20%;
 }
 
 li {
-    position: relative;
     font-size: 16px;
     padding-right: 5%;
     display: inline;
@@ -94,7 +84,7 @@ li a:hover {
     position: relative;
     font-size: 24px;
     /* width: 40%; */
-    padding-top: 90px;
+    margin-top: 90px;
 }
 
 .infoMenuElements {
@@ -111,8 +101,8 @@ li a:hover {
     font-weight: normal;
     color: #666666;
     /* padding-left: 10%; */
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     /* top: 57%; */
     /* margin: 0 auto; */
 }
@@ -130,9 +120,8 @@ li a:hover {
     /* margin-left: 43%; */
     /* padding-left: 20%; */
     /* float: left; */
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-left: 51.5%;
+    margin-left: 52%;
+    margin-right: 5%;
     /* margin: 0 auto; */
     background: #404CCF;
     border: none;
@@ -150,11 +139,14 @@ li a:hover {
 
 .generateForm {
     position: absolute;
-    left: 20%;
-    padding-top: 100px;
+    width: 250px;
+    margin-top: 100px;
+    margin-left: 20%;
+    margin-right: auto;
+    margin-bottom: auto;
 }
 
-.generateForm input[name="date"], .generateForm input[name="description"], .generateForm input[name="price"], .generateForm input[name="location"] {
+.generateForm select[name="generateObjectQR"] {
     width: 250px;
     padding: 5px;
     display: flex;
@@ -164,7 +156,7 @@ li a:hover {
     margin-bottom: 20px;
 }
 
-.generateForm input[name="date"]:focus, .generateForm input[name="description"]:focus, .generateForm input[name="price"]:focus, .generateForm input[name="location"]:focus {
+.generateForm select[name="generateObjectQR"]:focus {
     outline: none;
     border: none;
     border-bottom: 2px solid #404CCF;
@@ -180,8 +172,8 @@ li a:hover {
     transition: 0.2s;
     justify-content: left;
     padding: 0;
-    padding-top: 10%;
-    padding-bottom: 20%;
+    margin-top: 10%;
+    margin-bottom: 20%;
 }
 
 .generateFormButton:hover {
@@ -190,8 +182,10 @@ li a:hover {
 
 .generateAbout {
     position: absolute;
-    left: 60%;
-    padding-top: 80px;
+    margin-top: 80px;
+    margin-left: 60%;
+    margin-right: auto;
+    margin-bottom: auto;
     line-height: 25px;
 }
 
@@ -208,48 +202,30 @@ li a:hover {
     position: relative;
 }
 
-.inventoryTable {
-    padding-top: 100px;
-    width: 600px;
-    margin: auto;
+.inventoryTable, .dataSmallTable {
+    margin-top: 100px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
     border-spacing: 0;
 }
 
-.inventoryTableHeader {
+.dataLargeTable {
+    margin-top: 100px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 0;
+}
+
+.inventoryTableHeader, .dataTableHeader {
     background-color: #f5f5f5;
 }
 
-.inventoryTable th, .inventoryTable td {
+.inventoryTable th, .inventoryTable td, .dataTable th, .dataTable td {
     text-align: center;
     border-bottom: 2px solid #f5f5f5;
     padding: 10px 30px;
-}
-
-.inventoryForm input[name="date"], .inventoryForm input[name="result"] {
-    width: 250px;
-    padding: 5px;
-    display: flex;
-    border: none;
-    border-bottom: 2px solid #f5f5f5;
-    margin-bottom: 20px;
-}
-
-.inventoryForm input[name="date"]:focus, .inventoryForm input[name="result"]:focus {
-    outline: none;
-    border: none;
-    border-bottom: 2px solid #404CCF;
-}
-
-.inventoryFormButton {
-    color: #404CCF;
-    cursor: pointer;
-    border: none;
-    font-size: 18px;
-    font-weight: normal;
-    justify-content: left;
-    padding: 0;
-    padding-top: 5%;
-    padding-bottom: 5%;
 }
 
 .generateFormButton:hover {
@@ -257,15 +233,90 @@ li a:hover {
 }
 
 footer {
-    /* position: absolute; */
     width: 100%;
-    padding-top: 500px;
+    margin-top: 350px;
 }
 
 footer p {
     text-align: right;
     font-size: 12px;
-    padding-right: 15%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    margin-right: 15%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+/* Data pages */
+
+.dataContent {
+    padding-top: 100px;
+    border-top: 2px solid #c2c2c2;
+}
+
+.dataSmallContainer {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dataLargeContainer {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dataLink {
+    text-decoration: none;
+    color: #404CCF;
+}
+
+.dataTable {
+    margin-top: 20px;
+}
+
+.reveal-modal h2 {
+    font-weight: normal;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f5f5f5;
+}
+
+.dataForm input[name="roomLocation"], .dataForm input[name="roomNumberOfObjects"], .dataForm input[name="personName"],
+.dataForm input[name="personSurname"], .dataForm input[name="personPersonalCode"], .dataForm input[name="personEmail"],
+.dataForm input[name="personPhone"], .dataForm input[name="objectDescription"], .dataForm input[name="objectPrice"],
+.dataForm input[name="objectDate"] {
+    width: 250px;
+    padding: 5px;
+    display: flex;
+    border: none;
+    border-bottom: 2px solid #e7eaed;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.dataForm input[name="roomLocation"]:focus, .dataForm input[name="roomNumberOfObjects"]:focus,
+.dataForm input[name="personName"]:focus, .dataForm input[name="personSurname"]:focus,
+.dataForm input[name="personPersonalCode"]:focus, .dataForm input[name="personEmail"]:focus,
+.dataForm input[name="personPhone"]:focus, .dataForm input[name="objectDescription"]:focus,
+.dataForm input[name="objectPrice"]:focus, .dataForm input[name="objectDate"]:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #404CCF;
+}
+
+.dataFormButton {
+    width: 250px;
+    height: 40px;
+    color: #FFFFFF;
+    background-color: #404CCF;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    font-weight: normal;
+    justify-content: left;
+    padding: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.dataFormButton:hover {
+    background-color: #323ca5;
 }

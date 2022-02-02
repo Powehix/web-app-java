@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Rooms</title>
+    <title>Objects</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reveal/reveal.css">
     <link rel="stylesheet" href="media.css">
@@ -19,12 +19,14 @@
             <a href="#" class="big-link dataLink" data-reveal-id="myModal" data-animation="fade"><i class="fa fa-plus"></i></a>
         </div>
         <div class="reveal-modal" id="myModal">
-            <h2>Add Room</h2>
-            <form action="/rooms" method="post" class="dataForm">
-                <label for="roomLocation">Location</label>
-                <input type="text" name="roomLocation" id="roomLocation">
-                <label for="roomNumberOfObjects">Number of objects</label>
-                <input type="text" name="roomNumberOfObjects" id="roomNumberOfObjects">
+            <h2>Add Object</h2>
+            <form action="/objects" method="post" class="dataForm">
+                <label for="objectDescription">Description</label>
+                <input type="text" name="objectDescription" id="objectDescription">
+                <label for="objectPrice">Price</label>
+                <input type="text" name="objectPrice" id="objectPrice" step="any">
+                <label for="objectDate">Date</label>
+                <input type="date" name="objectDate" id="objectDate">
                 <button type="submit" class="dataFormButton">Add</button>
             </form>
             <a class="close-reveal-modal">&#215;</a>
@@ -32,13 +34,15 @@
         <table class="dataTable dataSmallTable">
             <tr class="dataTableHeader">
                 <th>ID</th>
-                <th>Location</th>
-                <th>Number of objects</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Date</th>
             </tr>
-            <tr th:each="el : ${rooms}">
-                <td th:text="${el.id_room}"></td>
-                <td th:text="${el.location_of_room}"></td>
-                <td th:text="${el.number_of_objects}"></td>
+            <tr th:each="el : ${objects}">
+                <td th:text="${el.id_object}"></td>
+                <td th:text="${el.description}"></td>
+                <td th:text="${el.price}"></td>
+                <td th:text="${el.date}"></td>
             </tr>
         </table>
     </div>

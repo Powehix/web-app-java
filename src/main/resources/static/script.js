@@ -1,9 +1,9 @@
 function toggleInventory() {
     var divInventory = document.getElementById("inventory");
-    var hr = document.getElementById ("hrInfo")
+    var hr = document.getElementById("hrInfo");
     var width = window.innerWidth;
     var footer = document.getElementById("foot");
-    footer.style.paddingTop = "200px";
+    footer.style.marginTop = "150px";
 
     if (divInventory.style.display === "none") {
         divInventory.style.display = "block";
@@ -32,10 +32,10 @@ function toggleInventory() {
 
 function toggleGenerate() {
     var divGenerate = document.getElementById("generate");
-    var hr = document.getElementById ("hrInfo")
+    var hr = document.getElementById ("hrInfo");
     var width = window.innerWidth;
     var footer = document.getElementById("foot");
-    footer.style.paddingTop = "500px";
+    footer.style.marginTop = "350px";
 
     if (divGenerate.style.display === "none") {
         divGenerate.style.display = "block";

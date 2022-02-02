@@ -4,11 +4,8 @@
     <meta charset="utf-8"/>
     <title th:text="${title}"></title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reveal/reveal.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
-    <script type="text/javascript" src="reveal/jquery.reveal.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -23,7 +20,7 @@
                         <p>Create and print a QR-code to make an inventory of available devices, view the inventory and manage their status.</p>
                     </div>
                     <div class="infoButton">
-                        <button class="mobileApp"><i class="fa fa-download"></i>Mobile App</button>
+                        <button class="mobileApp"><i class="fa fa-download"></i> Mobile App</button>
                     </div>
                     <div class="infoMenu" id="infoMenu">
                         <div class="infoMenuElements">
@@ -39,25 +36,17 @@
     </article>
     <div class="generate" id="generate">
         <form action="/home" class="generateForm">
-            <label for="generateDate">Date</label>
-            <input type="date" name="date" id="generateDate" value="2022-01-16">
-            <label for="generateDescription">Description</label>
-            <input type="text" name="description" id="generateDescription">
-            <label for="generatePrice">Price</label>
-            <input type="number" name="price" id="generatePrice">
-            <!-- здесь сделать выпадающий список из базы данных -->
-            <label for="generateLocation">Location</label>
-            <input type="text" name="location" id="generateLocation">
+            <label for="generateObjectQR">Object</label>
+            <select type="text" name="generateObjectQR" id="generateObjectQR"></select>
+            <!--здесь сделать выпадающий список-->
             <button type="sumbit" class="generateFormButton">Generate</button>
         </form>
         <div class="generateAbout">
             <article>
                 <section>
-                    <h3>About inventory</h3>
-                    <p>A unique identifier is assigned to the created QR code, which
-                        is later used to check the presence of the object. While scanning
-                        the QR code the fields presented for filling, which cannot be changed,
-                        but can be deleted from the database, are determined.
+                    <h3>How do QR codes work?</h3>
+                    <p>QR codes contain information about objects stored in the database. This information
+                        is read during scanning and is used to account for the objects in the inventory.
                     </p>
                 </section>
             </article>
@@ -71,23 +60,11 @@
                 <th>Date</th>
             </tr>
             <tr th:each="el : ${inventories}">
-                <td th:text="${el.ID}"></td>
+                <td th:text="${el.id_inventory}"></td>
                 <td th:text="${el.result}"></td>
                 <td th:text="${el.date}"></td>
             </tr>
         </table>
-        <a href="#" class="big-link" data-reveal-id="myModal" data-animation="none">Add</a>
-        <div class="reveal-modal" id="myModal">
-            <h2>Add Inventory</h2>
-            <form action="/home" method="post" class="inventoryForm">
-                <label for="inventoryResult">Result</label>
-                <input type="text" name="result" id="inventoryResult">
-                <label for="inventoryDate">Date</label>
-                <input type="date" name="date" id="inventoryDate">
-                <button type="submit" class="inventoryFormButton">Add inventory</button>
-            </form>
-            <a class="close-reveal-modal">&#215;</a>
-        </div>
     </div>
 </main>
 <footer id="foot" th:insert="blocks/footer :: footer"></footer>

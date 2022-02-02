@@ -12,18 +12,27 @@ public class Object {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long ID;
+    private Long id_object;
 
     private String description;
     private BigDecimal price;
     private Date date;
 
-    public Long getID() {
-        return ID;
+    public Object() {
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public Object(String description, BigDecimal price, Date date) {
+        this.description = description;
+        this.price = price;
+        this.date = date;
+    }
+
+    public Long getId_object() {
+        return id_object;
+    }
+
+    public void setId_object(Long id_object) {
+        this.id_object = id_object;
     }
 
     public String getDescription() {

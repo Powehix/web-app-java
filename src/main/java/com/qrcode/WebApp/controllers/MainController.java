@@ -25,10 +25,9 @@ public class MainController {
     }
 
     @PostMapping("/home")
-    public String inventoryAdd(@RequestParam String result, @RequestParam Date date, Model model) {
-        Inventory inventory = new Inventory(result, date);
+    public String inventoryAdd(@RequestParam String inventoryResult, @RequestParam Date inventoryDate, Model model) {
+        Inventory inventory = new Inventory(inventoryResult, inventoryDate);
         inventoryRepository.save(inventory);
         return "redirect:/home";
     }
-
 }
