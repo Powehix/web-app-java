@@ -29,20 +29,22 @@
             </form>
             <a class="close-reveal-modal">&#215;</a>
         </div>
-        <table class="dataTable dataSmallTable">
-            <tr class="dataTableHeader">
-                <th>ID</th>
-                <th>Location</th>
-                <th>Number of objects</th>
-            </tr>
-            <tr th:each="el : ${rooms}">
-                <td th:text="${el.id_room}"></td>
-                <td th:text="${el.location_of_room}"></td>
-                <td th:text="${el.number_of_objects}"></td>
-            </tr>
-        </table>
+        <div class="dataSmallLayer" id="dataLayer">
+            <table class="dataTable dataSmallTable">
+                <tr class="dataTableHeader">
+                    <th>ID</th>
+                    <th>Location</th>
+                    <th>Number of objects</th>
+                </tr>
+                <tr th:each="el : ${rooms}">
+                    <td th:text="${el.id_room}"></td>
+                    <td th:text="${el.location_of_room}"></td>
+                    <td th:text="${el.number_of_objects}"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </main>
-<footer th:insert="blocks/footer :: footer"></footer>
+<footer class="dataFooter" th:insert="blocks/footer :: footer"></footer>
 </body>
 </html>
