@@ -306,6 +306,7 @@ footer p {
     height: 40px;
     color: #FFFFFF;
     background-color: #404CCF;
+    border-radius: 5px;
     cursor: pointer;
     border: none;
     font-size: 18px;

@@ -20,11 +20,11 @@
         </div>
         <div class="reveal-modal" id="myModal">
             <h2>Add Room</h2>
-            <form action="/rooms" method="post" class="dataForm">
+            <form action="/rooms" method="post" name="roomForm" id="roomForm" class="dataForm">
                 <label for="roomLocation">Location</label>
-                <input type="text" name="roomLocation" id="roomLocation">
+                <input type="text" name="roomLocation" id="roomLocation" required>
                 <label for="roomNumberOfObjects">Number of objects</label>
-                <input type="text" name="roomNumberOfObjects" id="roomNumberOfObjects">
+                <input type="text" name="roomNumberOfObjects" id="roomNumberOfObjects" required>
                 <button type="submit" class="dataFormButton">Add</button>
             </form>
             <a class="close-reveal-modal">&#215;</a>
