@@ -37,8 +37,9 @@
     <div class="generate" id="generate">
         <form action="/home" class="generateForm">
             <label for="generateObjectQR">Object</label>
-            <select type="text" name="generateObjectQR" id="generateObjectQR"></select>
-            <!--здесь сделать выпадающий список-->
+            <select name="generateObjectQR" id="generateObjectQR">
+                <option th:each="ob : ${objects}" th:text="${ob.description}" th:value="${ob.id_object}"></option>
+            </select>
             <button type="sumbit" class="generateFormButton">Generate</button>
         </form>
         <div class="generateAbout">
@@ -56,11 +57,13 @@
         <table class="inventoryTable">
             <tr class="inventoryTableHeader">
                 <th>ID</th>
+                <th>Room</th>
                 <th>Result</th>
                 <th>Date</th>
             </tr>
             <tr th:each="el : ${inventories}">
                 <td th:text="${el.id_inventory}"></td>
+                <td th:text="${el.room.getLocation_of_room()}"></td>
                 <td th:text="${el.result}"></td>
                 <td th:text="${el.date}"></td>
             </tr>

@@ -1,9 +1,6 @@
 package com.qrcode.WebApp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Room {
@@ -15,12 +12,17 @@ public class Room {
     private String location_of_room;
     private Integer number_of_objects;
 
+    @ManyToOne(cascade = CascadeType.MERGE, optional = false)
+    @JoinColumn(name = "id_person", nullable = false)
+    private Person person;
+
     public Room() {
     }
 
-    public Room(String location_of_room, Integer number_of_objects) {
+    public Room(String location_of_room, Integer number_of_objects, Person person) {
         this.location_of_room = location_of_room;
         this.number_of_objects = number_of_objects;
+        this.person = person;
     }
 
     public Long getId_room() {
@@ -45,5 +47,13 @@ public class Room {
 
     public void setNumber_of_objects(Integer number_of_objects) {
         this.number_of_objects = number_of_objects;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }

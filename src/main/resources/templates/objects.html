@@ -20,9 +20,13 @@
         </div>
         <div class="reveal-modal" id="myModal">
             <h2>Add Object</h2>
-            <form action="/objects" method="post" class="dataForm">
+            <form action="/objects" method="post" name="objectForm" id="objectForm" class="dataForm">
                 <label for="objectDescription">Description</label>
                 <input type="text" name="objectDescription" id="objectDescription">
+                <label for="objectRoom">Room</label>
+                <select name="objectRoom" id="objectRoom" required>
+                    <option th:each="rs : ${rooms}" th:text="${rs.getLocation_of_room()}" th:value="${rs.id_room}"></option>
+                </select>
                 <label for="objectPrice">Price</label>
                 <input type="text" name="objectPrice" id="objectPrice" step="any">
                 <label for="objectDate">Date</label>
@@ -36,12 +40,14 @@
                 <tr class="dataTableHeader">
                     <th>ID</th>
                     <th>Description</th>
+                    <th>Room</th>
                     <th>Price</th>
                     <th>Date</th>
                 </tr>
                 <tr th:each="el : ${objects}">
                     <td th:text="${el.id_object}"></td>
                     <td th:text="${el.description}"></td>
+                    <td th:text="${el.room.getLocation_of_room()}"></td>
                     <td th:text="${el.price}"></td>
                     <td th:text="${el.date}"></td>
                 </tr>

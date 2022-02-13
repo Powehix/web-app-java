@@ -1,9 +1,6 @@
 package com.qrcode.WebApp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
@@ -15,14 +12,20 @@ public class Object {
     private Long id_object;
 
     private String description;
+
+    @ManyToOne(cascade = CascadeType.MERGE, optional = false)
+    @JoinColumn(name = "id_room", nullable = false)
+    private Room room;
+
     private BigDecimal price;
     private Date date;
 
     public Object() {
     }
 
-    public Object(String description, BigDecimal price, Date date) {
+    public Object(String description, Room room, BigDecimal price, Date date) {
         this.description = description;
+        this.room = room;
         this.price = price;
         this.date = date;
     }
@@ -41,6 +44,14 @@ public class Object {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public BigDecimal getPrice() {

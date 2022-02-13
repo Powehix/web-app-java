@@ -1,9 +1,6 @@
 package com.qrcode.WebApp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
@@ -13,13 +10,18 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id_inventory;
 
+    @ManyToOne(cascade = CascadeType.MERGE, optional = false)
+    @JoinColumn(name = "id_room", nullable = false)
+    private Room room;
+
     private String result;
     private Date date;
 
     public Inventory() {
     }
 
-    public Inventory(String result, Date date) {
+    public Inventory(Room room, String result, Date date) {
+        this.room = room;
         this.result = result;
         this.date = date;
     }
@@ -30,6 +32,14 @@ public class Inventory {
 
     public void setId_inventory(Long id_inventory) {
         this.id_inventory = id_inventory;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public String getResult() {

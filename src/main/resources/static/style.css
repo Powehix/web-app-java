@@ -11,6 +11,7 @@ body {
     font-style: normal;
     font-weight: normal;
     margin: 0 auto;
+    /*overflow: hidden;*/
 }
 
 ul {
@@ -156,10 +157,9 @@ li a:hover {
     margin-bottom: 20px;
 }
 
-.generateForm select[name="generateObjectQR"]:focus {
+.generateForm select[name="generateObjectQR"]:focus, .dataForm select[name="roomPerson"]:focus {
     outline: none;
     border: none;
-    border-bottom: 2px solid #404CCF;
 }
 
 .generateFormButton {
@@ -283,10 +283,13 @@ footer p {
 .dataForm input[name="personPhone"], .dataForm input[name="objectDescription"], .dataForm input[name="objectPrice"],
 .dataForm input[name="objectDate"] {
     width: 250px;
-    padding: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     display: flex;
     border: none;
     border-bottom: 2px solid #e7eaed;
+    color: #666666;
     margin-top: 15px;
     margin-bottom: 20px;
 }
@@ -299,6 +302,25 @@ footer p {
     outline: none;
     border: none;
     border-bottom: 2px solid #404CCF;
+    color: #404CCF;
+}
+
+.dataForm select[name="roomPerson"], .dataForm select[name="objectRoom"] {
+    width: 250px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    border: none;
+    border-bottom: 2px solid #e7eaed;
+    color: #666666;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.dataForm select[name="roomPerson"]:focus, .dataForm select[name="objectRoom"]:focus {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #e7eaed;
 }
 
 .dataFormButton {
