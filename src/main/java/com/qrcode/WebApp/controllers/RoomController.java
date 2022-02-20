@@ -25,8 +25,10 @@ public class RoomController {
     public String rooms( Model model) {
         Iterable<Room> rooms = roomRepository.findAll();
         Iterable<Person> persons = personRepository.findAll();
+        long count = roomRepository.count();
         model.addAttribute("rooms", rooms);
         model.addAttribute("persons", persons);
+        model.addAttribute("count", count);
         return "rooms";
     }
 

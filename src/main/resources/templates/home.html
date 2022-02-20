@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script.js"></script>
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
@@ -19,17 +18,13 @@
                     <div class="infoDescription">
                         <p>Create and print a QR-code to make an inventory of available devices, view the inventory and manage their status.</p>
                     </div>
-                    <div class="infoButton">
-                        <button class="mobileApp"><i class="fa fa-download"></i> Mobile App</button>
-                    </div>
                     <div class="infoMenu" id="infoMenu">
                         <div class="infoMenuElements">
                             <button class="menuButton inventoryButton" onclick="toggleInventory()">Inventory</button>
-                            <button class="menuButton generateButton active" onclick="toggleGenerate()">Generate QR code</button>
+                            <button class="menuButton generateButton active" onclick="toggleGenerate()">Generate</button>
                             <hr id="hrInfo"/>
                         </div>
                     </div>
-                    <script src="menu.js"></script>
                 </div>
             </div>
         </section>
@@ -42,6 +37,9 @@
             </select>
             <button type="sumbit" class="generateFormButton">Generate</button>
         </form>
+        <div>
+            <a href="javascript:(print());">Print</a>
+        </div>
         <div class="generateAbout">
             <article>
                 <section>
@@ -72,4 +70,7 @@
 </main>
 <footer id="foot"></footer>
 </body>
+
+<script src="script.js"></script>
+
 </html>

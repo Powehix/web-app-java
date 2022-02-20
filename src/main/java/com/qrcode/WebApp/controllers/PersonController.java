@@ -19,7 +19,9 @@ public class PersonController {
     @GetMapping("/persons")
     public String persons(Model model) {
         Iterable<Person> persons = personRepository.findAll();
+        long count = personRepository.count();
         model.addAttribute("persons", persons);
+        model.addAttribute("count", count);
         return "persons";
     }
 

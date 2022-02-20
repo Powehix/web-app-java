@@ -28,8 +28,10 @@ public class ObjectController {
     public String objects(Model model) {
         Iterable<Object> objects = objectRepository.findAll();
         Iterable<Room> rooms = roomRepository.findAll();
+        long count = objectRepository.count();
         model.addAttribute("objects", objects);
         model.addAttribute("rooms", rooms);
+        model.addAttribute("count", count);
         return "objects";
     }
 

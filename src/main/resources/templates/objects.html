@@ -17,6 +17,10 @@
     <div class="dataContent">
         <div class="dataSmallContainer">
             <a th:href="'/objects/add'" class="big-link dataLink" data-reveal-id="myModal" data-animation="fade"><i class="fa fa-plus"></i></a>
+            <div class="dataSmallTotal">
+                <p th:text="'Total: ' + ${count}"></p>
+            </div>
+            <a href="javascript:(print());">Print</a>
         </div>
         <div class="reveal-modal" id="myModal">
             <h2>Add Object</h2>

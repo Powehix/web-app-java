@@ -1,13 +1,15 @@
 /* large screen */
 @media only screen and (max-width: 1200px) {
-    /*hr {
-        margin-left: 47%;
-    }*/
+    .infoMenuElements hr {
+        margin-left: 35rem;
+    }
 }
 
 /* laptop */
 @media only screen and (max-width: 992px) {
-
+    .infoMenuElements hr {
+        margin-left: 35rem;
+    }
 }
 
 /* tablet */
@@ -18,4 +20,30 @@
 /* mobile */
 @media only screen and (max-width: 600px) {
 
+}
+
+@media print {
+    header, .dataContent a, .dataEdit a, .dataDelete a {
+        display: none;
+    }
+
+    .dataContent {
+        padding-top: 0;
+    }
+
+    .dataSmallTotal p, .dataLargeTotal p {
+        margin-left: 0;
+    }
+
+    .dataSmallLayer {
+        overflow: visible;
+    }
+
+    .dataLargeLayer {
+        width: 1100px;
+    }
+
+    .dataLargeTable {
+        width: 1000px;
+    }
 }

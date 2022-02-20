@@ -1,3 +1,16 @@
+var buttonContainer = document.getElementById("infoMenu");
+var buttons = buttonContainer.getElementsByClassName("menuButton");
+
+for (var i = 0; i < buttons.length; i++)
+{
+    buttons[i].addEventListener("click", function()
+    {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    });
+}
+
 function toggleInventory() {
     var divInventory = document.getElementById("inventory");
     var hr = document.getElementById("hrInfo");
@@ -8,16 +21,16 @@ function toggleInventory() {
     if (divInventory.style.display === "none") {
         divInventory.style.display = "block";
         if (width > 992) {
-            hr.style.marginLeft = "32%";
+            hr.style.marginLeft = "34%";
         } else {
-            hr.style.marginLeft = "22%";
+            hr.style.marginLeft = "50%";
         }
     } else {
         divInventory.style.display = "block";
         if (width > 992) {
-            hr.style.marginLeft = "32%";
+            hr.style.marginLeft = "34%";
         } else {
-            hr.style.marginLeft = "22%";
+            hr.style.marginLeft = "50%";
         }
     }
 
@@ -40,16 +53,16 @@ function toggleGenerate() {
     if (divGenerate.style.display === "none") {
         divGenerate.style.display = "block";
         if (width > 992) {
-            hr.style.marginLeft = "51.5%";
+            hr.style.marginLeft = "47rem";
         } else {
-            hr.style.marginLeft = "47%";
+            hr.style.marginLeft = "35rem";
         }
     } else {
         divGenerate.style.display = "block";
         if (width > 992) {
-            hr.style.marginLeft = "51.5%";
+            hr.style.marginLeft = "47rem";
         } else {
-            hr.style.marginLeft = "47%";
+            hr.style.marginLeft = "35rem";
         }
     }
 
