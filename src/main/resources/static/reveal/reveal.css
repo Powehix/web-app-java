@@ -22,7 +22,7 @@
 		background: #fff;
 		position: absolute;
 		z-index: 101;
-		padding: 30px 40px 34px;
+		padding: 30px 50px 34px;
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
@@ -33,6 +33,7 @@
 
 	.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
 	.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+	.reveal-modal.pre-large 	{ width: 470px; margin-left: -275px;}
 	.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
 	.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
 

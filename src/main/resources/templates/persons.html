@@ -22,7 +22,7 @@
             </div>
             <a href="javascript:(print());">Print</a>
         </div>
-        <div class="reveal-modal" id="myModal">
+        <div class="reveal-modal medium" id="myModal">
             <h2>Add Person</h2>
             <form action="/persons/add" method="post" name="personForm" id="personForm" class="dataForm">
                 <label for="personName">Name</label>
@@ -58,7 +58,7 @@
                     <td th:text="${el.phone}"></td>
                     <td class="dataEdit">
                         <a th:href="'/persons/' + ${el.id_person} + '/edit'" class="big-link dataLink" th:data-reveal-id="'modalEdit' + ${el.id_person}" data-animation="fade"><i class="dataLink fa fa-edit"></i></a>
-                        <div class="reveal-modal" th:id="'modalEdit' + ${el.id_person}">
+                        <div class="reveal-modal medium" th:id="'modalEdit' + ${el.id_person}">
                             <form th:action="'/persons/' + ${el.id_person} + '/edit'" method="post" class="dataForm">
                                 <h2 th:text="'Edit Person' + ' #' + ${el.id_person}"></h2>
                                 <label for="personNameEdit">Location</label>
@@ -78,7 +78,7 @@
                     </td>
                     <td class="dataDelete">
                         <a th:href="'/persons/' + ${el.id_person} + '/delete'" class="big-link dataLink" th:data-reveal-id="'modalDelete' + ${el.id_person}" data-animation="none"><i class="dataLink fa fa-trash-o"></i></a>
-                        <div class="reveal-modal" th:id="'modalDelete' + ${el.id_person}">
+                        <div class="reveal-modal pre-large" th:id="'modalDelete' + ${el.id_person}">
                             <form th:action="'/persons/' + ${el.id_person} + '/delete'" method="post">
                                 <p>Are you sure you want to delete this instance?</p>
                                 <button type="submit" name="personDelete" class="dataDeleteButton">Delete</button>

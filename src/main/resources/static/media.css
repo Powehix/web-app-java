@@ -23,6 +23,11 @@
 }
 
 @media print {
+
+    body {
+        font-family: "Arial";
+    }
+
     header, .dataContent a, .dataEdit a, .dataDelete a {
         display: none;
     }

@@ -28,9 +28,6 @@ public class MainController {
     @Autowired
     private RoomRepository roomRepository;
 
-   /* @Query("SELECT COUNT(*) FROM Room");
-    public string roomCount*/
-
     @GetMapping("/home")
     public String inventories(Model model) {
         Iterable<Inventory> inventories = inventoryRepository.findAll();
