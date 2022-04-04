@@ -31,13 +31,6 @@ li {
     display: inline;
 }
 
-.logo {
-    font-size: 20px;
-    color: white;
-    padding-right: 3rem;
-    padding-left: 3rem;
-}
-
 li a {
     font-size: 16px;
     text-decoration: none;
@@ -50,9 +43,20 @@ li a {
     padding-bottom: 2vh;
 }
 
+.logo a {
+    font-size: 20px;
+    color: white;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
 li a:hover {
     color: white;
     background-color: #4653e0;
+}
+
+.logo a:hover {
+    background-color: #404CCF;
 }
 
 .info {
@@ -151,7 +155,7 @@ li a:hover {
     margin-bottom: auto;
 }
 
-.generateForm select[name="generateObjectQR"] {
+.generateForm select[name="qrContent"] {
     width: 250px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -163,7 +167,7 @@ li a:hover {
     margin-bottom: 20px;
 }
 
-.generateForm select[name="generateObjectQR"]:focus  {
+.generateForm select[name="qrContent"]:focus  {
     outline: none;
     border: none;
     border-bottom: 2px solid #f5f5f5;
@@ -188,6 +192,34 @@ li a:hover {
 
 .generateFormButton:hover {
     background-color: #4653e0;
+}
+
+.generateContent a {
+    position: absolute;
+    font-size: 14px;
+    margin-top: 34vh;
+    margin-left: 40rem;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+.generateQR {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #f5f5f5;
+    background-image: url("qrcode.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10vh;
+    margin-left: 40rem;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+
+.qrCodeContent {
+    border: 2px solid #f5f5f5;
 }
 
 .generateAbout {

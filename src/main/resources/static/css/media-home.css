@@ -28,27 +28,18 @@
         font-family: "Arial";
     }
 
-    header, .dataContent a, .dataEdit a, .dataDelete a {
+    header, .info, .generateForm, .generateContent a, .generateAbout {
         display: none;
     }
 
-    .dataContent {
-        padding-top: 0;
+    .generateQR {
+        margin-left: 15rem;
     }
 
-    .dataSmallTotal p, .dataLargeTotal p {
-        margin-left: 0;
-    }
-
-    .dataSmallLayer {
-        overflow: visible;
-    }
-
-    .dataLargeLayer {
-        width: 1100px;
-    }
-
-    .dataLargeTable {
-        width: 1000px;
+    .qrCodeContent {
+        display: block;
+        border: none;
+        width: 300px;
+        height: 300px;
     }
 }

@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <title>Home</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/media-home.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
@@ -30,17 +30,19 @@
         </section>
     </article>
     <div class="generate" id="generate">
-        <form action="/home" class="generateForm">
-            <label for="generateObjectQR">Object</label>
-            <select name="generateObjectQR" id="generateObjectQR">
+        <form method="post" action="/qrGenerate" class="generateForm">
+            <label for="qrContent">Object</label>
+            <select name="qrContent" id="qrContent">
                 <option th:each="ob : ${objects}" th:text="${ob.description}" th:value="${ob.id_object}"></option>
             </select>
-            <button type="sumbit" class="generateFormButton">Generate</button>
+            <button type="submit" class="generateFormButton">Generate</button>
         </form>
-        <!--тут сделать генерацию QR-кода
-        <div>
+        <div class="generateContent">
+            <div class="generateQR">
+                <img class="qrCodeContent" th:src="${qrCodeContent}">
+            </div>
             <a href="javascript:(print());">Print</a>
-        </div>-->
+        </div>
         <div class="generateAbout">
             <article>
                 <section>
@@ -71,7 +73,5 @@
 </main>
 <footer id="foot"></footer>
 </body>
-
-<script src="script.js"></script>
-
+<script src="js/script.js"></script>
 </html>

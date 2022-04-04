@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.Date;
@@ -28,7 +29,12 @@ public class MainController {
     @Autowired
     private RoomRepository roomRepository;
 
-    @GetMapping("/home")
+    @RequestMapping("/")
+    public String home() {
+        return "home";
+    }
+
+    @GetMapping(value={ "/", "/home"})
     public String inventories(Model model) {
         Iterable<Inventory> inventories = inventoryRepository.findAll();
         Iterable<Object> objects = objectRepository.findAll();
