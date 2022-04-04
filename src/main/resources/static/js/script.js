@@ -1,3 +1,8 @@
+if (window.location.pathname === "/qrGenerate") {
+    var link = document.getElementById("printLink");
+    link.style.display = "block";
+}
+
 var buttonContainer = document.getElementById("infoMenu");
 var buttons = buttonContainer.getElementsByClassName("menuButton");
 

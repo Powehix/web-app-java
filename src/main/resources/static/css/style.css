@@ -195,7 +195,7 @@ li a:hover {
 }
 
 .printLink {
-    display: block;
+    display: none;
     position: absolute;
     font-size: 14px;
     margin-top: 34vh;
