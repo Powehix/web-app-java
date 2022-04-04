@@ -1,7 +1,7 @@
 package com.qrcode.WebApp;
 
 import com.qrcode.WebApp.models.Room;
-import com.qrcode.WebApp.repo.RoomRepository;
+import com.qrcode.WebApp.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

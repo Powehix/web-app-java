@@ -2,8 +2,8 @@ package com.qrcode.WebApp.controllers;
 
 import com.qrcode.WebApp.models.Object;
 import com.qrcode.WebApp.models.Room;
-import com.qrcode.WebApp.repo.ObjectRepository;
-import com.qrcode.WebApp.repo.RoomRepository;
+import com.qrcode.WebApp.repositories.ObjectRepository;
+import com.qrcode.WebApp.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,11 +1,11 @@
-package com.qrcode.WebApp.service.impl;
+package com.qrcode.WebApp.services.impl;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
-import com.qrcode.WebApp.service.QRCodeService;
+import com.qrcode.WebApp.services.QRCodeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

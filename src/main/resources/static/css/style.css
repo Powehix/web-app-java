@@ -194,7 +194,8 @@ li a:hover {
     background-color: #4653e0;
 }
 
-.generateContent a {
+.printLink {
+    display: block;
     position: absolute;
     font-size: 14px;
     margin-top: 34vh;
@@ -208,7 +209,7 @@ li a:hover {
     width: 150px;
     height: 150px;
     background-color: #f5f5f5;
-    background-image: url("qrcode.png");
+    background-image: url("../images/qrcode.png");
     background-size: 100px;
     background-repeat: no-repeat;
     background-position: center;

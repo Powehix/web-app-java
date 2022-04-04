@@ -24,22 +24,17 @@
 
 @media print {
 
-    body {
-        font-family: "Arial";
-    }
-
-    header, .info, .generateForm, .generateContent a, .generateAbout {
+    header, .info, .generateForm, .printLink, .generateAbout {
         display: none;
     }
 
     .generateQR {
-        margin-left: 15rem;
+        margin-top: 0;
+        margin-left: 0;
     }
 
     .qrCodeContent {
         display: block;
         border: none;
-        width: 300px;
-        height: 300px;
     }
 }
