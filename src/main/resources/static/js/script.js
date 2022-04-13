@@ -1,6 +1,13 @@
-if (window.location.pathname === "/qrGenerate") {
-    var link = document.getElementById("printLink");
+var link = document.getElementById("printLink");
+
+/*if (window.location.pathname === "/qrGenerate") {
     link.style.display = "block";
+}*/
+
+function togglePrint() {
+    /*if (window.matchMedia('(print)')) {
+        link.style.display = "none";
+    }*/
 }
 
 var buttonContainer = document.getElementById("infoMenu");

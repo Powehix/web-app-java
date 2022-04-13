@@ -1,0 +1,37 @@
+@media print {
+
+    body {
+        font-family: "Arial";
+    }
+
+    header, .info, .generateForm, .printLink, .generateAbout, .dataContent a, .dataEdit a, .dataDelete a{
+        display: none;
+    }
+
+    .inventory {
+        padding-top: 0px;
+    }
+
+    .dataContent {
+        padding-top: 0;
+    }
+
+    .dataSmallTotal p {
+        margin-left: 0;
+    }
+
+    .dataSmallLayer {
+        overflow: visible;
+    }
+
+    .generateQR {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .qrCodeContent {
+        display: block;
+        border: none;
+    }
+}
+

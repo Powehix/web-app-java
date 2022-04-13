@@ -195,7 +195,7 @@ li a:hover {
 }
 
 .printLink {
-    display: none;
+    display: block;
     position: absolute;
     font-size: 14px;
     margin-top: 34vh;
@@ -284,6 +284,10 @@ li a:hover {
     padding-left: 10px;
 }
 
+.dataTable .dataInventory {
+    padding-left: 0px;
+}
+
 .dataDeleteButton {
     width: 200px;
     height: 40px;
@@ -316,6 +320,10 @@ li a:hover {
     align-items: flex-end;
 }
 
+.smallContent {
+    padding-top: 0px;
+}
+
 .dataSmallTotal p {
     display: flex;
     margin-left: 39rem;
@@ -325,7 +333,7 @@ li a:hover {
 
 .dataSmallContainer a, .dataLargeContainer a {
     display: flex;
-    margin-right: 5.2rem;
+    margin-right: 5.3rem;
     font-size: 14px;
 }
 
@@ -359,7 +367,7 @@ li a:hover {
 .dataForm input[name="roomLocation"], .dataForm input[name="roomNumberOfObjects"], .dataForm input[name="personName"],
 .dataForm input[name="personSurname"], .dataForm input[name="personPersonalCode"], .dataForm input[name="personEmail"],
 .dataForm input[name="personPhone"], .dataForm input[name="objectDescription"], .dataForm input[name="objectPrice"],
-.dataForm input[name="objectDate"] {
+.dataForm input[name="objectDate"], .dataForm input[name="inventoryResult"], .dataForm input[name="inventoryDate"] {
     width: 250px;
     padding-left: 5px;
     padding-top: 5px;
@@ -376,14 +384,15 @@ li a:hover {
 .dataForm input[name="personName"]:focus, .dataForm input[name="personSurname"]:focus,
 .dataForm input[name="personPersonalCode"]:focus, .dataForm input[name="personEmail"]:focus,
 .dataForm input[name="personPhone"]:focus, .dataForm input[name="objectDescription"]:focus,
-.dataForm input[name="objectPrice"]:focus, .dataForm input[name="objectDate"]:focus {
+.dataForm input[name="objectPrice"]:focus, .dataForm input[name="objectDate"]:focus,
+.dataForm input[name="inventoryResult"]:focus, .dataForm input[name="inventoryDate"]:focus {
     outline: none;
     border: none;
     border-bottom: 2px solid #404CCF;
     color: #404CCF;
 }
 
-.dataForm select[name="roomPerson"], .dataForm select[name="objectRoom"] {
+.dataForm select[name="roomPerson"], .dataForm select[name="objectRoom"], .dataForm select[name="inventoryRoom"] {
     width: 250px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -395,7 +404,7 @@ li a:hover {
     margin-bottom: 20px;
 }
 
-.dataForm select[name="roomPerson"]:focus, .dataForm select[name="objectRoom"]:focus {
+.dataForm select[name="roomPerson"]:focus, .dataForm select[name="objectRoom"]:focus, .dataForm select[name="inventoryRoom"]:focus {
     outline: none;
     border: none;
     border-bottom: 2px solid #e7eaed;
