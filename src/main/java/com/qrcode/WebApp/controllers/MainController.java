@@ -2,7 +2,6 @@ package com.qrcode.WebApp.controllers;
 
 import com.qrcode.WebApp.models.Inventory;
 import com.qrcode.WebApp.models.Object;
-import com.qrcode.WebApp.models.Person;
 import com.qrcode.WebApp.models.Room;
 import com.qrcode.WebApp.repositories.InventoryRepository;
 import com.qrcode.WebApp.repositories.ObjectRepository;
