@@ -2,7 +2,11 @@
 @media only screen and (max-width: 1200px) {
 
     .infoMenuElements hr {
-        margin-left: 35rem;
+        margin-left: 31rem;
+    }
+
+    .generateAbout {
+        display: none;
     }
 }
 

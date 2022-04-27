@@ -142,7 +142,7 @@ li a:hover {
 }
 
 .generate {
-    display: block;
+    display: flex;
     position: relative;
 }
 
@@ -198,14 +198,15 @@ li a:hover {
     display: block;
     position: absolute;
     font-size: 14px;
-    margin-top: 34vh;
+    /*margin-top: 34vh;*/
+    margin-top: 3vh;
     margin-left: 40rem;
     margin-right: auto;
     margin-bottom: auto;
 }
 
 .generateQR {
-    position: absolute;
+    position: relative;
     width: 150px;
     height: 150px;
     background-color: #f5f5f5;

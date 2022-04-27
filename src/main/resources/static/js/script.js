@@ -31,23 +31,23 @@ function toggleInventory() {
 
     if (divInventory.style.display === "none") {
         divInventory.style.display = "block";
-        if (width > 992) {
-            hr.style.marginLeft = "34%";
+        if (width > 1200) {
+            hr.style.marginLeft = "33rem";
         } else {
-            hr.style.marginLeft = "50%";
+            hr.style.marginLeft = "17rem";
         }
     } else {
         divInventory.style.display = "block";
-        if (width > 992) {
-            hr.style.marginLeft = "34%";
+        if (width > 1200) {
+            hr.style.marginLeft = "33rem";
         } else {
-            hr.style.marginLeft = "50%";
+            hr.style.marginLeft = "17rem";
         }
     }
 
     var divGenerate = document.getElementById("generate");
 
-    if (divGenerate.style.display === "block") {
+    if (divGenerate.style.display === "flex") {
         divGenerate.style.display = "none";
     } else {
         divGenerate.style.display = "none";
@@ -59,21 +59,21 @@ function toggleGenerate() {
     var hr = document.getElementById ("hrInfo");
     var width = window.innerWidth;
     var footer = document.getElementById("foot");
-    footer.style.marginTop = "350px";
+    footer.style.marginTop = "130px";
 
     if (divGenerate.style.display === "none") {
-        divGenerate.style.display = "block";
-        if (width > 992) {
+        divGenerate.style.display = "flex";
+        if (width > 1200) {
             hr.style.marginLeft = "47rem";
         } else {
-            hr.style.marginLeft = "35rem";
+            hr.style.marginLeft = "31rem";
         }
     } else {
-        divGenerate.style.display = "block";
-        if (width > 992) {
+        divGenerate.style.display = "flex";
+        if (width > 1200) {
             hr.style.marginLeft = "47rem";
         } else {
-            hr.style.marginLeft = "35rem";
+            hr.style.marginLeft = "31rem";
         }
     }
 
